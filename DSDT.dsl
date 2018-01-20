@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Sat Jan 20 17:13:56 2018
+ * Disassembly of DSDT.aml, Sat Jan 20 17:51:34 2018
  *
  * Original Table Header:
  *     Signature        "DSDT"
@@ -21,8 +21,8 @@
 DefinitionBlock ("", "DSDT", 1, "LENOVO", "CB-01   ", 0x00000001)
 {
     /*
-     * iASL Warning: There were 5 external control methods found during
-     * disassembly, but only 0 were resolved (5 unresolved). Additional
+     * iASL Warning: There were 15 external control methods found during
+     * disassembly, but only 10 were resolved (5 unresolved). Additional
      * ACPI tables may be required to properly disassemble the code. This
      * resulting disassembler output file may not compile because the
      * disassembler did not know how many arguments to assign to the
@@ -40,15 +40,30 @@ DefinitionBlock ("", "DSDT", 1, "LENOVO", "CB-01   ", 0x00000001)
      * because the disassembler had to guess at the number of arguments
      * required for each:
      */
+    /*
+     * External declarations were imported from
+     * a reference file -- refs.txt
+     */
+
+    External (_GPE.MMTB, MethodObj)    // Imported: 0 Arguments
+    External (_GPE.VHOV, MethodObj)    // Imported: 3 Arguments
     External (_PR_.CPU0._PPC, IntObj)
     External (_PR_.CPU0._PSS, PkgObj)
+    External (_SB_.PCI0.GFX0.DD02._BCM, MethodObj)    // Imported: 1 Arguments
     External (_SB_.PCI0.IEIT.EITV, MethodObj)    // Warning: Unknown method, guessing 0 arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // Imported: 1 Arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // Imported: 1 Arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // Imported: 2 Arguments
     External (_SB_.PCI0.PEG0.PEGP.DD02, UnknownObj)    // Warning: Unknown object
+    External (_SB_.PCI0.PEG0.PEGP.SGPO, MethodObj)    // Imported: 2 Arguments
+    External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // Imported: 4 Arguments
+    External (_SB_.PCI0.XHC_.RHUB.TPLD, MethodObj)    // Imported: 2 Arguments
     External (CFGD, IntObj)
     External (HDOS, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (HNOT, MethodObj)    // Warning: Unknown method, guessing 1 arguments
     External (HWID, IntObj)    // Warning: Unknown object
     External (IDAB, MethodObj)    // Warning: Unknown method, guessing 0 arguments
+    External (MDBG, MethodObj)    // Imported: 1 Arguments
     External (PDC0, IntObj)
     External (PDC1, IntObj)
     External (PDC2, IntObj)
